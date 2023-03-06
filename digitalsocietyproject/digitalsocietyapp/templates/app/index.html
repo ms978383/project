@@ -1,0 +1,417 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
+        <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+        <title>Dashboard - Digital Society</title>
+        <meta name="description" content="Oero Laravel">
+        <meta name="author" content="Oero Laravel">
+                
+                
+        <link rel="stylesheet" href="{% static 'app\assets\plugins\bootstrap\css\bootstrap.min.css' %} ">
+        <link rel="stylesheet" href="{% static 'app\assets\plugins\jvectormap\jquery-jvectormap-2.0.3.min.css' %} ">
+        <link rel="stylesheet" href="{% static 'app\assets\plugins\morrisjs\morris.min.css' %} ">
+                <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'app\assets\css\main.css' %} ">
+        <link rel="stylesheet" href="{% static 'app\assets\css\color_skins.css' %} ">
+            </head>
+        <body class="theme-cyan">
+        <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="m-t-30"><img class="zmdi-hc-spin" src="{% static 'app\assets\images\digilogo.png' %}" width="500" height="200" alt="Digital Society"></div>
+                <p>Please wait...</p>        
+            </div>
+        </div>
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <nav class="navbar p-l-5 p-r-5">
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html"><img src="{% static 'app\assets\images\digilogo.png' %}" width="50" alt="Digital Society"><span class="m-l-10"></span></a>
+            </div>
+        </li>
+        <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>
+        <li class="d-none d-lg-inline-block"><a href="..\doctor\events.html" title="Events"><i class="zmdi zmdi-calendar"></i></a></li>
+        <li class="d-none d-lg-inline-block"><a href="..\app\inbox.html" title="Inbox"><i class="zmdi zmdi-email"></i></a></li>
+        <li><a href="..\app\contact-list.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a></li>
+        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i>
+            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+            </a>
+            <ul class="dropdown-menu pullDown">
+                <li class="body">
+                    <ul class="menu list-unstyled">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object" src="..\assets\images\xs\avatar2.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Sophia <span class="time">30min ago</span></span>
+                                        <span class="message">There are many variations of passages</span>                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object" src="..\assets\images\xs\avatar3.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Sophia <span class="time">31min ago</span></span>
+                                        <span class="message">There are many variations of passages of Lorem Ipsum</span>                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object" src="..\assets\images\xs\avatar4.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Isabella <span class="time">35min ago</span></span>
+                                        <span class="message">There are many variations of passages</span>                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object" src="..\assets\images\xs\avatar5.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Alexander <span class="time">35min ago</span></span>
+                                        <span class="message">Contrary to popular belief, Lorem Ipsum random</span>                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object" src="..\assets\images\xs\avatar6.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Grayson <span class="time">1hr ago</span></span>
+                                        <span class="message">There are many variations of passages</span>                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </li>                        
+                    </ul>
+                </li>
+                <li class="footer"> <a href="javascript:void(0);">View All</a> </li>
+            </ul>
+        </li>
+        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-flag"></i>
+            <div class="notify">
+                <span class="heartbit"></span>
+                <span class="point"></span>
+            </div>
+            </a>
+            <ul class="dropdown-menu pullDown">
+                <li class="header">Project</li>
+                <li class="body">
+                    <ul class="menu tasks list-unstyled">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="progress-container progress-primary">
+                                    <span class="progress-badge">Neurology</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+                                            <span class="progress-value">86%</span>
+                                        </div>
+                                    </div>                        
+                                    <ul class="list-unstyled team-info">
+                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar2.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar3.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar4.jpg" alt="Avatar">
+                                        </li>                            
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="progress-container progress-info">
+                                    <span class="progress-badge">Gynecology</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                                            <span class="progress-value">45%</span>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled team-info">
+                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar10.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar9.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar8.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar7.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar6.jpg" alt="Avatar">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="progress-container progress-warning">
+                                    <span class="progress-badge">Cardio Monitoring</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
+                                            <span class="progress-value">29%</span>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled team-info">
+                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar5.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar2.jpg" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="..\assets\images\xs\avatar7.jpg" alt="Avatar">
+                                        </li>                            
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>                    
+                    </ul>
+                </li>
+                <li class="footer"><a href="javascript:void(0);">View All</a></li>
+            </ul>
+        </li>
+        <li class="d-none d-md-inline-block">
+            <div class="input-group">                
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-addon">
+                    <i class="zmdi zmdi-search"></i>
+                </span>
+            </div>
+        </li>        
+        <li class="float-right">
+            <a href="{% url 'logout' %}" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
+            <a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
+        </li>
+    </ul>
+</nav>        
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar">
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Digital Society</a></li>
+        {% comment %} <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"></a></li> {% endcomment %}
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane stretchRight active" id="dashboard">
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        {% if uid.role == 'secretory' %}
+                            <div class="user-info">
+                                <div class="image"><a href="..\doctor\profile.html"><img
+                                            src="{{ sid.pic.url }}" alt="User"></a></div>
+                                            <div class="detail">
+                                                <h4>{{uid.role}}</h4>
+                                                <h4>{{sid.username}}</h4>
+                                                <small>Flat No.:{{sid.flat_No}}</small>
+                                                <br>
+                                                <small>Mobile No.:{{sid.contact}}</small>
+                                                <br>
+                                                <small>email@address:-{{uid.email}}</small>
+                                                <small>Address:-{{sid.society_address}}</small>                        
+                                            </div>
+                            </div>
+                            {% else %}
+                            <div class="user-info">
+                                <div class="image"><a href="..\doctor\profile.html"><img
+                                            src="{{ mid.pic.url }}" alt="User"></a></div>
+                                            <div class="detail">
+                                                <h4>{{uid.role}}</h4>
+                                                <h4>{{mid.username}}</h4>
+                                                <small>Flat No.:{{mid.flat_No}}</small>
+                                                <br>
+                                                <small>Mobile No.:{{mid.contact}}</small>
+                                                <br>
+                                                <small>email@address:-{{uid.email}},</small>
+                                                <small>Address:-{{mid.society_address}}</small>                        
+                                            </div>
+                            </div>
+                            {% endif %}
+                    </li>
+                    <li class="header">MAIN</li>
+                    
+                    <li class="active open"><a href="{% url 'home' %}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li> 
+                    <li class="">
+                        <li class="active open"><a href="{% url 'profile' %}"><i class="zmdi zmdi-account"></i><span>Profile</span></a></li>
+                    
+                    </li>
+                    {% if uid.role == 'secretory' %}           
+                    <li class="">
+                        <li class="active open"><a href="{% url 'all-user-id-password' %}"><i class="zmdi zmdi-account"></i><span>User Id password</span></a></li>
+                    
+                    </li>
+                    <li class="">
+                        <li class="active open"><a href="{% url 'add-society-member' %}"><i class="zmdi zmdi-account-add"></i><span>Add Society Member</span></a></li>
+                        
+                    </li>
+                    <li class="">
+                        <li class="active open"><a href="{% url 'all-society-member' %}"><i class="zmdi zmdi-account-o"></i><span>All Society Member</span></a></li>
+                    </li>
+                    <li class="">
+                        <li class="active open"><a href="{% url 'add-notice' %}"><i class="zmdi zmdi-copy"></i><span>Add Notice</span></a></li>
+                    </li>
+                    <li>
+                        <li class="active open"><a href="{% url 'all-society-notice' %}"><i class="zmdi zmdi-copy"></i><span>All Society Notice</span></a></li>
+                    </li>
+                    
+                    <li class="">
+                        <li class="active open"><a href="{% url 'add-event' %}"><i class="zmdi zmdi-apps"></i><span>Add Events</span></a></li>
+                    </li>
+                    <li class="">
+                        <li class="active open"><a href="{% url 'all-society-event' %}"><i class="zmdi zmdi-apps"></i><span>All Society Events</span></a></li>
+                    </li>                 
+                    {% else %}
+                    
+                    <li class="">
+                        <li class="active open"><a href="{% url 'all-society-member' %}"><i class="zmdi zmdi-account-o"></i><span>All Society Member</span></a></li>
+                    </li>
+                    <li class="">
+                        <li class="active open"><a href="{% url 'all-society-event' %}"><i class="zmdi zmdi-apps"></i><span>All Society Events</span></a></li>
+                    </li>
+                    <li>
+                        <li class="active open"><a href="{% url 'all-society-notice' %}"><i class="zmdi zmdi-copy"></i><span>All Society Notice</span></a></li>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>    
+</aside>
+  <!-- Chat-launcher -->
+<div class="chat-launcher"></div>
+<div class="chat-wrapper">
+    <div class="card">
+        <div class="header">
+                                  
+        </div>
+            <div class="input-group p-t-15">
+                <input type="text" class="form-control" placeholder="Enter text here...">
+                <span class="input-group-addon">
+                    <i class="zmdi zmdi-mail-send"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>       
+{% block content %}
+ <section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Dashboard <small class="text-muted">Welcome to Digital Society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                                                    <div class="inlineblock text-center m-r-15 m-l-15 d-none d-lg-inline-block">
+                                <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-width="2" data-bar-spacing="5" data-bar-color="#fff">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
+                                <small class="col-white">Visitors</small>
+                            </div>
+                            <div class="inlineblock text-center m-r-15 m-l-15 d-none d-lg-inline-block">
+                                <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-width="2" data-bar-spacing="5" data-bar-color="#fff">1,3,5,7,4,6,3,2,6,5,9,8,7,9,5</div>
+                                <small class="col-white">Operations</small>
+                            </div>
+                        
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Digital Society</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                <div class="row clearfix">
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="body">
+                <h3 class="number count-to m-b-0" data-from="0" data-to="1600" data-speed="2500" data-fresh-interval="700">1600 <i class="zmdi zmdi-trending-up float-right"></i></h3>
+                <p class="text-muted">New Feedbacks</p>
+                <div class="progress">
+                    <div class="progress-bar l-blush" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"></div>
+                </div>
+                <small>Change 15%</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="body">
+                <h3 class="number count-to m-b-0" data-from="0" data-to="3218" data-speed="2500" data-fresh-interval="1000">3218 <i class="zmdi zmdi-trending-up float-right"></i></h3>
+                <p class="text-muted">Happy Clients</p>
+                <div class="progress">
+                    <div class="progress-bar l-green" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"></div>
+                </div>
+                <small>Change 23%</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <div class="card">
+            <div class="body">
+                <h3 class="number count-to m-b-0" data-from="0" data-to="284" data-speed="2500" data-fresh-interval="1000">284 <i class="zmdi zmdi-trending-up float-right"></i></h3>
+                <p class="text-muted">Well Smiley Faces <i class="zmdi zmdi-mood"></i></p>
+                <div class="progress">
+                    <div class="progress-bar l-parpl" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"></div>
+                </div>
+                <small>Change 50%</small>
+            </div>
+        </div>
+    </div>
+</div>
+        
+            </div>
+{% endblock %}
+</section>
+                <!-- Scripts -->
+        <script src="{% static 'app\assets\bundles\libscripts.bundle.js' %}"></script>    
+        <script src="{% static 'app\assets\bundles\vendorscripts.bundle.js' %}"></script>
+
+        <script src="{% static 'app\assets\bundles\mainscripts.bundle.js' %}"></script>
+        <script src="{% static 'app\assets\bundles\morrisscripts.bundle.js' %}"></script>
+        <script src="{% static 'app\assets\bundles\jvectormap.bundle.js' %}"></script>
+        <script src="{% static 'app\assets\bundles\knob.bundle.js' %}"></script>
+        <script src="{% static 'app\assets\js\pages\index.js' %}"></script>
+				<!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59f5afbbbb0c3f433d4c5c4c/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
+    </body>
+</html>

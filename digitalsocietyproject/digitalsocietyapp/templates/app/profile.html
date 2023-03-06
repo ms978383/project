@@ -1,0 +1,152 @@
+﻿{% extends 'app/index.html' %}    
+
+{% block content %}
+   <section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Profile <small class="text-muted">Welcome to Digital Society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-edit"></i>
+                            </button>
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Digital Society</a></li>
+                            <li class="breadcrumb-item">Member</li>
+                            <li class="breadcrumb-item active">Profile</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix profile-page">
+        <div class="col-lg-4 col-md-12">
+            <div class="card profile-header">
+                <div class="body text-center">
+                    {% if uid.role == 'secretory' %}
+                    <div class="profile-image"> <img src="{{sid.pic.url}}" alt=""> </div>
+                    <div>
+                        <h4 class="m-b-0"><strong>{{sid.username}}</strong></h4>
+                        <span class="job_post">{{uid.email}}</span>
+                        <p>{{sid.contact}}<br>{{sid.society_address}}</p>
+
+                    </div>
+                    {% else %}
+                    <div class="profile-image"> <img src="{{mid.pic.url}}" alt=""> </div>
+                    <div>
+                        <h4 class="m-b-0"><strong>{{mid.username}}</strong></h4>
+                        <span class="job_post">{{uid.email}}</span>
+                        <p>{{mid.contact}}<br>{{mid.society_address}}</p>
+
+                    </div>
+                    {% endif %}
+                    <form action="{% url 'user-pic-change' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div>
+                        <input type="file" name="pic" />
+                        </div>
+                        <input type="submit" value="upload" class="btn btn-info btn-round"/>
+
+                    </form>
+                </div>                    
+            </div>                               
+            
+                            
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Account">Account</a></li> 
+                                            
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane body active" id="about">
+                        <p>Specialized in rendering successful and comprehensive services to Co-operative Housing Societies. Started in 2022, we are the pioneers in Computerized Billing & Accounts Services to Housing Societies. With the changing scenario of increasing complexities in Housing Societies management, we have professionalized Housing Societies Management.
+
+                            The Billing & Accounts combined with professional management has become strength of many of our clients. In a field where the Accountant / Manager normally changes along with a change in the Managing Committee, we have proved that this need not be the case. Possibly just because, we are not anybody’s man. We are the Housing Society Management People.
+                            
+                            We have also developed our own software to handle Billing and Accounts related requirements of our clients. This unique software also takes care of service tax matters of housing society. Of late, we have entered into the area of Property / Estate Management. Under Compliance & Property Management, to provide Total Solutions we have teamed up with the leading service providers in the fields of plant & equipment services, plumbing & electrical services, security & house-keeping services to be offered to housing societies. Our mission is to provide cost-effective, efficient and affordable “Total Property Solution” to Co-operative Housing Societies in the city of <b>Ahmedabad</b>.
+                            <br>
+                            <pre>
+                                "We are here, because we serve better. This attitude is the driving force to
+                                    constantly Improve on our services and Add Values to our services.
+                                            Our reputation and success lies in our services"
+                            </pre>
+                            </p>
+                        
+                            
+                        
+                    </div>
+                    
+                    <div class="tab-pane body" id="Account">
+                        <div class="form-group">
+                    <form method="POST" action="{% url 'password-change' %}">
+                    {% csrf_token %}
+                            <input type="text" class="form-control"  value="{{uid.email}}" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Current Password" name="currentpassword">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="New Password" name="newpassword">
+                        </div>
+                        
+                        <input type="submit" value="Save Changes" class="btn btn-info btn-round" />
+                    </form>
+                        <hr>
+                        {% if uid.role == 'secretory' %}
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                            <form action="{% url 'user-deatils-change' %}" method="POST">
+                            {% csrf_token %}
+                                    <input type="text" class="form-control" placeholder="Flat Number" name="housenum" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Current User Name " name="currentuser">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="New User Name" name="username">
+                                </div>
+                            </div>                                    
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Contact" name="mobilenum">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Residental Address" name="address">
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-round">Save Changes</button>
+                            </div>
+                        </form>
+                        </div>
+                        {% endif %}
+                    </div>                        
+                </div>
+            </div>
+                           
+        </div>
+    </div>
+
+            </div>
+</section>
+{% endblock %}
+        

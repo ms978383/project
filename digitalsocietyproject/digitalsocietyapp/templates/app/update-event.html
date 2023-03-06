@@ -1,0 +1,86 @@
+{% extends 'app/index.html' %}   
+
+{% block content %}
+<section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Update Society Event<small class="text-muted">Welcome to Digital Society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                                <i class="zmdi zmdi-plus"></i>
+                            </button>
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i>Digital Society</a></li>
+                            <li class="breadcrumb-item">Dashboard</li>
+                            <li class="breadcrumb-item active">Update Society Event</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="header">
+                    
+                    
+                </div>
+                {% if a_msg %}
+                <div class="alert alert-success" role="alert">
+                    {{a_msg}}
+                </div>
+                {% endif %}
+            <form action="{% url 'update-event' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                        
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" placeholder="Id " name="eventid" value="{{eid.id}}">
+                                <input type="text" class="form-control" placeholder="Event of Title" name="title" value="{{eid.event_of_title}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Description" name="desc" value="{{eid.event_desc}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Created By" name="createby" value="{{eid.created_by}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Updated At" name="updateat" value="{{eid.updated_at}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="file" class="form-control" placeholder="Image Of Event" name="pic" value="{{eid.pic}}">
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row clearfix">                            
+                        <div class="col-sm-12">
+                            <input type="submit" class="btn btn-primary btn-round" value="UPDATE EVENT"/>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+            </div>
+</section>
+{% endblock %}
+              
